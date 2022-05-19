@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>修改Android模拟器RAM大小的方法</title>
+      <link href="/2022/05/20/%E4%BF%AE%E6%94%B9Android%E6%A8%A1%E6%8B%9F%E5%99%A8RAM%E5%A4%A7%E5%B0%8F%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+      <url>/2022/05/20/%E4%BF%AE%E6%94%B9Android%E6%A8%A1%E6%8B%9F%E5%99%A8RAM%E5%A4%A7%E5%B0%8F%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>想在在Mca上玩ウマ娘，安装Android studio 发现内存不太够很卡<br>用以下方法可以改善</p><h2 id="修改Android模拟器RAM大小的方法"><a href="#修改Android模拟器RAM大小的方法" class="headerlink" title="修改Android模拟器RAM大小的方法"></a>修改Android模拟器RAM大小的方法</h2><p>安卓开发时候会遇到这种问题：Warning: requested ram_size 2048M too big, reduced to 1024M，这时候可以通过修改Android模拟器的RAM大小来解决（Android模拟器启动速度慢，运行也很缓慢，也可以用这个方法来加速）。</p><p>1.找到AVD的安装路径：.android\avd\AVD的名字.avd（如：D:\AVD.android\avd\PHONE.avd）</p><p>2.xxx.avd目录下的congfig.ini就是模拟器设备的配置文件：</p><p>   用记事本打开xxx.avd目录下的congfig.ini</p><p>   找到 hw.ramSize&#x3D;2048 这句 ，把后面的2048修改得小一点就行（1024或512）    </p><p>另外，附上网上找到的congfig.ini内容介绍：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">avd.ini.encoding=ISO-8859-1  #字符编码</span><br><span class="line">hw.dPad=no                            #是否要让手机支持DPad键，默认为yes，表示支持。DPad键就是手机上的那些Home键、返回键、电话键、电源键。</span><br><span class="line">hw.lcd.density=240                 #是屏幕的密度</span><br><span class="line"></span><br><span class="line">sdcard.size=16M                    #SD卡的大小</span><br><span class="line">hw.cpu.arch=arm                   #CPU的结构类型</span><br><span class="line">hw.device.hash=-1812631727          #硬件的某种值，可能是设备码之类的</span><br><span class="line"></span><br><span class="line">hw.camera.front=none</span><br><span class="line">hw.camera.back=none         #背部相机，还有相关的一系列设置</span><br><span class="line">disk.dataPartition.size=200M   #隔离缓存设置</span><br><span class="line">skin.path=480×800                  #模拟器皮肤路径</span><br><span class="line">skin.dynamic=yes                    #模拟器皮肤是否动态设置</span><br><span class="line">hw.keyboard=yes                    #使用按键输入</span><br><span class="line">hw.ramSize=512                    # 模拟器的RAM运行内存大小</span><br><span class="line">hw.device.manufacturer=Google    #设备厂商（所有人）</span><br><span class="line">hw.sdCard=yes                       #是否使用sd卡</span><br><span class="line">hw.mainKeys=yes                  #是否虚拟键完全隐藏 1：隐藏；0：不</span><br><span class="line">hw.accelerometer=yes           #是否使用加速计等相关设置</span><br><span class="line">skin.name=480×800               #分辨率</span><br><span class="line">abi.type=armeabi</span><br><span class="line">hw.trackBall=yes                    #是否使用跟踪球</span><br><span class="line">hw.device.name=Nexus One   #设备名称</span><br><span class="line">hw.battery=no                          #是否使用电池</span><br><span class="line">image.sysdir.1=platforms\android-10\images\             # 模拟器的映像文件路径</span><br><span class="line"></span><br><span class="line">hw.sensors.proximity=yes       #是否使用接近传感器</span><br><span class="line">hw.sensors.orientation=no</span><br><span class="line">hw.audioInput=yes                   #是否记入默认值，然后输入</span><br><span class="line"></span><br><span class="line">hw.gps=yes                              #是否使用全球定位</span><br><span class="line">vm.heapSize=512                    # 虚拟机默认堆大小</span><br></pre></td></tr></table></figure><p>————————————————<br>版权声明：本文为CSDN博主「caide_huang」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/qq_33701857/article/details/50978613">https://blog.csdn.net/qq_33701857/article/details/50978613</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 模拟器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/05/19/hello-world/"/>
       <url>/2022/05/19/hello-world/</url>
