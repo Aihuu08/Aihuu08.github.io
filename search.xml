@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/2022/05/26/Pages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<hr>
-<p>layout: hexo<br>title: Pagesでブログを作成する方法<br>date: 2022-05-26 00:00:01<br>categories:<br>           - Hexo<br>tags:<br>           - Hexo<br>           - Blog</p>
-<p>本記事では、Hexo + GitHub Pagesの組み合わせでブログ環境を構築する方法について説明します。<br>上から順番に読んでいただくと、ブログを作成できるような流れになっています。</p>
-<p>本記事の内容です。</p>
-<ol>
-<li>前提条件</li>
-<li>インストール</li>
-<li>ブログを作成</li>
-<li>記事を作成</li>
-<li>テーマを適用</li>
-<li>ローカルでサーバ起動</li>
-<li>GitHub Pagesへデプロイ</li>
-<li>ゴール</li>
-<li>GitHub上でブログ用のリポジトリを作成</li>
-<li>_config.ymlを編集</li>
-<li>GitHub Pagesの設定</li>
-<li>デプロイ</li>
-<li>テーマ</li>
-<li>一覧</li>
-<li>参考にしたページ</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2022/05/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -43,6 +17,37 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Pagesでブログを作成する方法</title>
+    <url>/2022/05/26/Pages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>本記事では、Hexo + GitHub Pagesの組み合わせでブログ環境を構築する方法について説明します。<br>上から順番に読んでいただくと、ブログを作成できるような流れになっています。</p>
+<p>本記事の内容です。</p>
+<ol>
+<li>前提条件</li>
+<li>インストール</li>
+<li>ブログを作成</li>
+<li>記事を作成</li>
+<li>テーマを適用</li>
+<li>ローカルでサーバ起動</li>
+<li>GitHub Pagesへデプロイ</li>
+<li>ゴール</li>
+<li>GitHub上でブログ用のリポジトリを作成</li>
+<li>_config.ymlを編集</li>
+<li>GitHub Pagesの設定</li>
+<li>デプロイ</li>
+<li>テーマ</li>
+<li>一覧</li>
+<li>参考にしたページ<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Blog</tag>
+      </tags>
   </entry>
   <entry>
     <title>修改Android模拟器RAM大小的方法</title>

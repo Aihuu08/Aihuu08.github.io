@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-25T15:09:51.622Z</updated>
+  <updated>2022-05-25T15:15:10.731Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,23 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Pagesでブログを作成する方法</title>
     <link href="http://example.com/2022/05/26/Pages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/"/>
     <id>http://example.com/2022/05/26/Pages%E3%81%A7%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/</id>
-    <published>2022-05-25T15:00:01.439Z</published>
-    <updated>2022-05-25T15:09:51.622Z</updated>
+    <published>2022-05-25T15:00:01.000Z</published>
+    <updated>2022-05-25T15:15:10.731Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>layout: hexo<br>title: Pagesでブログを作成する方法<br>date: 2022-05-26 00:00:01<br>categories:<br>           - Hexo<br>tags:<br>           - Hexo<br>           - Blog</p><p>本記事では、Hexo + GitHub Pagesの組み合わせでブログ環境を構築する方法について説明します。<br>上から順番に読んでいただくと、ブログを作成できるような流れになっています。</p><p>本記事の内容です。</p><ol><li>前提条件</li><li>インストール</li><li>ブログを作成</li><li>記事を作成</li><li>テーマを適用</li><li>ローカルでサーバ起動</li><li>GitHub Pagesへデプロイ</li><li>ゴール</li><li>GitHub上でブログ用のリポジトリを作成</li><li>_config.ymlを編集</li><li>GitHub Pagesの設定</li><li>デプロイ</li><li>テーマ</li><li>一覧</li><li>参考にしたページ</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>本記事では、Hexo + GitHub Pagesの組み合わせでブログ環境を構築する方法について説明します。<br>上から順番に読んでいただくと、ブログを作成できるような流れになっています。</p><p>本記事の内容です。</p><ol><li>前提条件</li><li>インストール</li><li>ブログを作成</li><li>記事を作成</li><li>テーマを適用</li><li>ローカルでサーバ起動</li><li>GitHub Pagesへデプロイ</li><li>ゴール</li><li>GitHub上でブログ用のリポジトリを作成</li><li>_config.ymlを編集</li><li>GitHub Pagesの設定</li><li>デプロイ</li><li>テーマ</li><li>一覧</li><li>参考にしたページ<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2></li></ol>]]></content>
     
     
       
       
-    <summary type="html">&lt;hr&gt;
-&lt;p&gt;layout: hexo&lt;br&gt;title: Pagesでブログを作成する方法&lt;br&gt;date: 2022-05-26 00:00:01&lt;br&gt;categories:&lt;br&gt;           - Hexo&lt;br&gt;tags:&lt;br&gt;           - He</summary>
+    <summary type="html">&lt;p&gt;本記事では、Hexo + GitHub Pagesの組み合わせでブログ環境を構築する方法について説明します。&lt;br&gt;上から順番に読んでいただくと、ブログを作成できるような流れになっています。&lt;/p&gt;
+&lt;p&gt;本記事の内容です。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;前提条件&lt;/li&gt;
+&lt;</summary>
       
     
     
     
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+    <category term="Blog" scheme="http://example.com/tags/Blog/"/>
     
   </entry>
   
