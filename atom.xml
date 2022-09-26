@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-09-01T09:48:16.698Z</updated>
+  <updated>2022-09-26T18:36:29.620Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>电脑重装系统后如何配置以前的hexo</title>
+    <link href="http://example.com/2022/09/27/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%89%8D%E7%9A%84hexo/"/>
+    <id>http://example.com/2022/09/27/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%89%8D%E7%9A%84hexo/</id>
+    <published>2022-09-26T18:25:18.000Z</published>
+    <updated>2022-09-26T18:36:29.620Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="电脑重装系统后如何配置以前的Hexo"><a href="#电脑重装系统后如何配置以前的Hexo" class="headerlink" title="电脑重装系统后如何配置以前的Hexo"></a>电脑重装系统后如何配置以前的Hexo</h1><p>前阵子换了SSD重装了系统，发现hexo博客需要在新系统安装配置，找了一下教程，在这里记录一下具体操作。</p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先，操作之前。<strong>最重要的一点：备份保存</strong> 硬盘里hexo博客文件夹（就是hexo博客存储的文件夹。） 因为不知道哪些文件需要用，所以我把整个文件夹都保存下来。或者打成一个压缩包。</p><h3 id="重装系统之后"><a href="#重装系统之后" class="headerlink" title="重装系统之后"></a>重装系统之后</h3><h3 id="1-安装软件-git-和-Node-js"><a href="#1-安装软件-git-和-Node-js" class="headerlink" title="1.安装软件 git 和 Node.js"></a>1.安装软件 git 和 Node.js</h3><p>git下载地址：<a href="https://link.zhihu.com/?target=https://git-scm.com/">git官网</a> Node.js下载地址：<a href="https://link.zhihu.com/?target=https://nodejs.org/en/">Node.js官网</a></p><h3 id="2-配置SSH-Key"><a href="#2-配置SSH-Key" class="headerlink" title="2.配置SSH Key"></a>2.配置SSH Key</h3><p>在 Git Bash 客户端，输入：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">git config --global user.name "这里输入在GitHub的账户名"git config --global user.email "这里输入在GitHub的注册邮箱名"ssh-keygen -t rsa -C "这里输入在 GitHub 的注册邮箱"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>接着在 Git Bash 客户端，输入命令行：</p><pre class="line-numbers language-none"><code class="language-none">cat id_ras.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这样会显示公钥文件内容，把它复制到剪贴板。</p><p>登录 GitHub 账户，点击右上角个人头像的下拉菜单，依次点击 Settings &gt; SSH and GPG Keys，在 SSH Keys 页面右上角有个<code>New SSH Key</code>按钮，点击该按钮后，粘贴上刚才复制的公钥内容。这样，SSH Key 就配置好了。</p><h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h3><p>在 Git Bash 客户端输入: <code>npm install hexo-cli -g</code></p><h3 id="4-删除hexo博客文件夹里的部分文件"><a href="#4-删除hexo博客文件夹里的部分文件" class="headerlink" title="4.删除hexo博客文件夹里的部分文件"></a>4.删除hexo博客文件夹里的部分文件</h3><p><strong>提示：为防止误操作，稳妥起见，执行本操作之前，还是在另外一个盘再存储一份hexo博客文件夹保存为好。</strong></p><p><strong>保留_config.yml, themes/, source/, scaffolds/, package.json, .gitignore 这些文件/文件夹，</strong> 其它可以删除。</p><h3 id="5-安装文件"><a href="#5-安装文件" class="headerlink" title="5.安装文件"></a>5.安装文件</h3><p>在Git Bash 客户端输入 <code>npm install</code></p><h3 id="6-安装部署"><a href="#6-安装部署" class="headerlink" title="6.安装部署"></a>6.安装部署</h3><p>在Git Bash 客户端输入： <code>npm install hexo-deployer-git --save</code></p><h3 id="7-运行"><a href="#7-运行" class="headerlink" title="7.运行"></a>7.运行</h3><p>最后，在博客文件夹上，运行Git Bash 客户端，依次输入以下命令：</p><pre class="line-numbers language-none"><code class="language-none">hexo cleanhexo ghexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>然后查看是否配置成功。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://zhuanlan.zhihu.com/p/348616082">https://zhuanlan.zhihu.com/p/348616082</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;电脑重装系统后如何配置以前的Hexo&quot;&gt;&lt;a href=&quot;#电脑重装系统后如何配置以前的Hexo&quot; class=&quot;headerlink&quot; title=&quot;电脑重装系统后如何配置以前的Hexo&quot;&gt;&lt;/a&gt;电脑重装系统后如何配置以前的Hexo&lt;/h1&gt;&lt;p&gt;前阵子换了S</summary>
+      
+    
+    
+    
+    <category term="教程" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Hexo" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+    <category term="blog" scheme="http://example.com/tags/blog/"/>
+    
+  </entry>
   
   <entry>
     <title>如何通过docker-compose来安装WordPress</title>
@@ -49,11 +77,11 @@
   </entry>
   
   <entry>
-    <title>如何通过docker-compose来安装WordPress</title>
+    <title>让Windows和Mac无缝共用一套键鼠和剪贴板的方法</title>
     <link href="http://example.com/2022/09/01/%E8%AE%A9Windows%E5%92%8CMac%E6%97%A0%E7%BC%9D%E5%85%B1%E7%94%A8%E4%B8%80%E5%A5%97%E9%94%AE%E9%BC%A0%E5%92%8C%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>http://example.com/2022/09/01/%E8%AE%A9Windows%E5%92%8CMac%E6%97%A0%E7%BC%9D%E5%85%B1%E7%94%A8%E4%B8%80%E5%A5%97%E9%94%AE%E9%BC%A0%E5%92%8C%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E6%96%B9%E6%B3%95/</id>
     <published>2022-09-01T09:46:56.000Z</published>
-    <updated>2022-09-26T18:23:27.227Z</updated>
+    <updated>2022-09-26T18:37:23.665Z</updated>
     
     <content type="html"><![CDATA[<h1 id="让Windows和Mac无缝共用一套键鼠和剪贴板的方法"><a href="#让Windows和Mac无缝共用一套键鼠和剪贴板的方法" class="headerlink" title="让Windows和Mac无缝共用一套键鼠和剪贴板的方法"></a>让Windows和Mac无缝共用一套键鼠和剪贴板的方法</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不知道大家又没有和我一样，同时拥有一台台式机Windows和Mac。每次我想同时操作两台电脑的时候，或者想把Mac当副屏幕的时候，我都需要单独操作两边的鼠标和键盘，感觉相当的麻烦。</p><p>虽然以前买了一个罗技的MX Master 3 可以满足需求，但是第一成本太高，还有一点就是你还得买个罗技的键盘，成本真的太高了，每次复制文件也是需要右键点击操作，非常的鸡肋。</p><p>有没有一个既免费，又方便好用的方案呢。</p><p>研究了半天，有了，而且非常流畅，体验下来也没什么延迟。直接感觉起飞(‘ω’)ノ</p><p>就是一个叫做<strong>ShareMouse</strong>的软件。听说Synergy也可以做到，但是需要付费直接PASS掉。</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="1-下载ShareMouse"><a href="#1-下载ShareMouse" class="headerlink" title="1.下载ShareMouse"></a>1.下载ShareMouse</h3><p><a href="https://www.sharemouse.com/download/">https://www.sharemouse.com/download/</a></p><p>这里分别在Windows和Mac上下载对应系统的软件</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921214804615.png" alt="image-20220921214804615"></p><h3 id="2-安装和设置"><a href="#2-安装和设置" class="headerlink" title="2.安装和设置"></a>2.安装和设置</h3><h4 id="2-1-Windows端设置"><a href="#2-1-Windows端设置" class="headerlink" title="2.1 Windows端设置"></a>2.1 Windows端设置</h4><p>分别在Windows和Mac上安装好了之后，Windows可以在右下角看到一个鼠标的图标</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921214957796.png" alt="image-20220921214957796"></p><p>然后右键它。</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921215155806.png" alt="image-20220921215155806"></p><p>选择Settings</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921215720935.png" alt="image-20220921215720935"></p><p>看到⬆图之后，选择Clients，这里我们配置一下Mac的IP地址</p><p>如果不知道是多少，可以在Mac相同的地方点击 Show local IP address进行查看</p><p>然后我们填入到②的位置。最后点击一下6555旁边的小电脑图标。</p><p>设置完成。</p><h3 id="2-2-Mac端设置"><a href="#2-2-Mac端设置" class="headerlink" title="2.2 Mac端设置"></a>2.2 Mac端设置</h3><p>![截屏2022-09-21 22.01.02](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.01.02.png)</p><p>还是一样上面任务栏我们可以看到一个鼠标的图标，点击它一下。</p><p>选择Settings</p><p>![截屏2022-09-21 22.02.55](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.02.55.png)</p><p>然后一样点击选择Clients</p><p>![截屏2022-09-21 22.04.40](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.04.40.png)</p><p>这里我们填写Windows的IP地址</p><p>记住，是Windows的IP`地址不是Mac的。</p><p>和Windows的设置一样填入IP地址之后。最后点击一下6555旁边的小电脑图标。</p><h4 id="2-3配置桌面位置"><a href="#2-3配置桌面位置" class="headerlink" title="2.3配置桌面位置"></a>2.3配置桌面位置</h4><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921221027583.png" alt="image-20220921221027583"></p><p>右键任务栏的鼠标图标</p><p>选择 Monitor Manager</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921221109897.png" alt="image-20220921221109897"></p><p>这里你可以配置对应的位置。</p><p>两台电脑一定要保持一致。</p><p><strong>好了，恭喜你完成了！撒花(‘ω’)ノ</strong></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实设置起来很简单，总结起来就是把各个端设置成对方的IP地址即可。</p><p>当然你还可以设置一个密码，在设置里的 Network里面 Security里打上勾然后输入密码。</p><p>两台电脑都要输入一样的密码设置。就可以了。</p><p>体验下来很流畅，拖动文件一步到位。很棒。嘿嘿嘿(;・∀・)</p>]]></content>
     
@@ -556,33 +584,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;hexo常用命令笔记&quot;&gt;&lt;a href=&quot;#hexo常用命令笔记&quot; class=&quot;headerlink&quot; title=&quot;hexo常用命令笔记&quot;&gt;&lt;/a&gt;hexo常用命令笔记&lt;/h1&gt;&lt;h2 id=&quot;hexo&quot;&gt;&lt;a href=&quot;#hexo&quot; class=&quot;head</summary>
-      
-    
-    
-    
-    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
-    
-    
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
-    
-    <category term="Blog" scheme="http://example.com/tags/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo + GitHub 博客从 Windows 迁移到 macOS</title>
-    <link href="http://example.com/2022/08/12/Hexo-GitHub-%E5%8D%9A%E5%AE%A2%E4%BB%8E-Windows-%E8%BF%81%E7%A7%BB%E5%88%B0-macOS/"/>
-    <id>http://example.com/2022/08/12/Hexo-GitHub-%E5%8D%9A%E5%AE%A2%E4%BB%8E-Windows-%E8%BF%81%E7%A7%BB%E5%88%B0-macOS/</id>
-    <published>2022-08-12T06:25:46.000Z</published>
-    <updated>2022-08-12T11:01:24.493Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一、Mac-环境配置"><a href="#一、Mac-环境配置" class="headerlink" title="一、Mac 环境配置"></a>一、Mac 环境配置</h2><ol><li><p>在 Mac 安装 git 和 node.js<br>使用 brew 进行安装</p><pre class="line-numbers language-none"><code class="language-none">brew install gitbrew install node<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>安装 hexo</p><pre class="line-numbers language-none"><code class="language-none">npm install hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ol><p>这条命令不行（用的时候会出现 hexo: COMMAND NOT FOUND 问题）就执行下面这条：</p><pre class="line-numbers language-none"><code class="language-none">npm install hexo-cli -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="3"><li><p>初始化 hexo 目录</p><pre class="line-numbers language-none"><code class="language-none">mkdir blogcd blog<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>新建 hexo 服务</p><pre class="line-numbers language-none"><code class="language-none">hexo inithexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li></ol><p>打开 localhost:4000 查看是否成功。<br>5. 生成 SSH 密钥<br>先查看本地的 SSH Key：</p><pre class="line-numbers language-cd" data-language="cd"><div class="caption"><span>~/.ssh</span></div><code class="language-cd">如果没有，生成一个SSH Key：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>ssh-keygen -t rsa -C “<a href="mailto:example@example.com">example@example.com</a>“</p><p>最后那个是注册邮箱。<br>6. 关联 GitHub<br>进入 .ssh 文件夹：</p><pre class="line-numbers language-none"><code class="language-none">cd ~/.ssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后打开里面的 id_rsa.pub 文件，里面的内容就是 SSH key，复制全部内容。<br>网页打开 GitHub 的设置：Settings -&gt; SSH and GPG keys，点击绿色的按钮New SSH key，然后在输入框中输入刚才复制的内容。保存后，GitHub 可能会向你的邮箱发送一个验证链接（如果有记得去邮箱验证，不然之后的 hexo 部署会一直不成功的）。<br>测试一下是否成功：</p><pre class="line-numbers language-none"><code class="language-none">ssh git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>看到下面的即成功：</p><p><img src="/images/111.png"></p><h2 id="二、配置文件转移"><a href="#二、配置文件转移" class="headerlink" title="二、配置文件转移"></a>二、配置文件转移</h2><p>先找到 Windows 下的博客根目录 hexo，复制该目录下的：_config.yml、scaffolds、source、themes、public。<br>再找到 Mac 下的博客根目录 hexo，把刚才复制的内容，直接覆盖替换相同的文件以及文件夹。</p><h2 id="三、设置个人信息"><a href="#三、设置个人信息" class="headerlink" title="三、设置个人信息"></a>三、设置个人信息</h2><pre class="line-numbers language-none"><code class="language-none">git config --global user.name "yourname”git config --global user.email youremail@example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="四、发布文章"><a href="#四、发布文章" class="headerlink" title="四、发布文章"></a>四、发布文章</h2><p>运行以下命令，查看是否可以成功发布博客：</p><pre class="line-numbers language-none"><code class="language-none">hexo d -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>发现报错：</p><pre class="line-numbers language-none"><code class="language-none">ERROR Deployer not found: git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>只需要安装：</p><pre class="line-numbers language-none"><code class="language-none">npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="五、参考"><a href="#五、参考" class="headerlink" title="五、参考"></a>五、参考</h2><p>作者：Wonz<br>链接：<a href="https://juejin.cn/post/7016661862448103460">https://juejin.cn/post/7016661862448103460</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、Mac-环境配置&quot;&gt;&lt;a href=&quot;#一、Mac-环境配置&quot; class=&quot;headerlink&quot; title=&quot;一、Mac 环境配置&quot;&gt;&lt;/a&gt;一、Mac 环境配置&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;在 Mac 安装 git 和 node.js&lt;br&gt;使用 </summary>
       
     
     

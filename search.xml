@@ -1449,7 +1449,7 @@ volumes:
       </tags>
   </entry>
   <entry>
-    <title>如何通过docker-compose来安装WordPress</title>
+    <title>让Windows和Mac无缝共用一套键鼠和剪贴板的方法</title>
     <url>/2022/09/01/%E8%AE%A9Windows%E5%92%8CMac%E6%97%A0%E7%BC%9D%E5%85%B1%E7%94%A8%E4%B8%80%E5%A5%97%E9%94%AE%E9%BC%A0%E5%92%8C%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="让Windows和Mac无缝共用一套键鼠和剪贴板的方法"><a href="#让Windows和Mac无缝共用一套键鼠和剪贴板的方法" class="headerlink" title="让Windows和Mac无缝共用一套键鼠和剪贴板的方法"></a>让Windows和Mac无缝共用一套键鼠和剪贴板的方法</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不知道大家又没有和我一样，同时拥有一台台式机Windows和Mac。每次我想同时操作两台电脑的时候，或者想把Mac当副屏幕的时候，我都需要单独操作两边的鼠标和键盘，感觉相当的麻烦。</p>
 <p>虽然以前买了一个罗技的MX Master 3 可以满足需求，但是第一成本太高，还有一点就是你还得买个罗技的键盘，成本真的太高了，每次复制文件也是需要右键点击操作，非常的鸡肋。</p>
@@ -1620,6 +1620,44 @@ volumes:
       </categories>
       <tags>
         <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电脑重装系统后如何配置以前的hexo</title>
+    <url>/2022/09/27/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%89%8D%E7%9A%84hexo/</url>
+    <content><![CDATA[<h1 id="电脑重装系统后如何配置以前的Hexo"><a href="#电脑重装系统后如何配置以前的Hexo" class="headerlink" title="电脑重装系统后如何配置以前的Hexo"></a>电脑重装系统后如何配置以前的Hexo</h1><p>前阵子换了SSD重装了系统，发现hexo博客需要在新系统安装配置，找了一下教程，在这里记录一下具体操作。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先，操作之前。<strong>最重要的一点：备份保存</strong> 硬盘里hexo博客文件夹（就是hexo博客存储的文件夹。） 因为不知道哪些文件需要用，所以我把整个文件夹都保存下来。或者打成一个压缩包。</p>
+<h3 id="重装系统之后"><a href="#重装系统之后" class="headerlink" title="重装系统之后"></a>重装系统之后</h3><h3 id="1-安装软件-git-和-Node-js"><a href="#1-安装软件-git-和-Node-js" class="headerlink" title="1.安装软件 git 和 Node.js"></a>1.安装软件 git 和 Node.js</h3><p>git下载地址：<a href="https://link.zhihu.com/?target=https://git-scm.com/">git官网</a> Node.js下载地址：<a href="https://link.zhihu.com/?target=https://nodejs.org/en/">Node.js官网</a></p>
+<h3 id="2-配置SSH-Key"><a href="#2-配置SSH-Key" class="headerlink" title="2.配置SSH Key"></a>2.配置SSH Key</h3><p>在 Git Bash 客户端，输入：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">git config --global user.name "这里输入在GitHub的账户名"
+git config --global user.email "这里输入在GitHub的注册邮箱名"
+ssh-keygen -t rsa -C "这里输入在 GitHub 的注册邮箱"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>接着在 Git Bash 客户端，输入命令行：</p>
+<pre class="line-numbers language-none"><code class="language-none">cat id_ras.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这样会显示公钥文件内容，把它复制到剪贴板。</p>
+<p>登录 GitHub 账户，点击右上角个人头像的下拉菜单，依次点击 Settings &gt; SSH and GPG Keys，在 SSH Keys 页面右上角有个<code>New SSH Key</code>按钮，点击该按钮后，粘贴上刚才复制的公钥内容。这样，SSH Key 就配置好了。</p>
+<h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h3><p>在 Git Bash 客户端输入: <code>npm install hexo-cli -g</code></p>
+<h3 id="4-删除hexo博客文件夹里的部分文件"><a href="#4-删除hexo博客文件夹里的部分文件" class="headerlink" title="4.删除hexo博客文件夹里的部分文件"></a>4.删除hexo博客文件夹里的部分文件</h3><p><strong>提示：为防止误操作，稳妥起见，执行本操作之前，还是在另外一个盘再存储一份hexo博客文件夹保存为好。</strong></p>
+<p><strong>保留_config.yml, themes/, source/, scaffolds/, package.json, .gitignore 这些文件/文件夹，</strong> 其它可以删除。</p>
+<h3 id="5-安装文件"><a href="#5-安装文件" class="headerlink" title="5.安装文件"></a>5.安装文件</h3><p>在Git Bash 客户端输入 <code>npm install</code></p>
+<h3 id="6-安装部署"><a href="#6-安装部署" class="headerlink" title="6.安装部署"></a>6.安装部署</h3><p>在Git Bash 客户端输入： <code>npm install hexo-deployer-git --save</code></p>
+<h3 id="7-运行"><a href="#7-运行" class="headerlink" title="7.运行"></a>7.运行</h3><p>最后，在博客文件夹上，运行Git Bash 客户端，依次输入以下命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo clean
+hexo g
+hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>然后查看是否配置成功。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://zhuanlan.zhihu.com/p/348616082">https://zhuanlan.zhihu.com/p/348616082</a></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
 </search>
