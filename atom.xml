@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-09-21T13:14:22.309Z</updated>
+  <updated>2022-09-01T09:48:16.698Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,26 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://example.com/2022/09/21/%E8%AE%A9Windows%E5%92%8CMac%E6%97%A0%E7%BC%9D%E5%85%B1%E7%94%A8%E4%B8%80%E5%A5%97%E9%94%AE%E9%BC%A0%E5%92%8C%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://example.com/2022/09/21/%E8%AE%A9Windows%E5%92%8CMac%E6%97%A0%E7%BC%9D%E5%85%B1%E7%94%A8%E4%B8%80%E5%A5%97%E9%94%AE%E9%BC%A0%E5%92%8C%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E6%96%B9%E6%B3%95/</id>
-    <published>2022-09-21T13:14:22.308Z</published>
-    <updated>2022-09-21T13:14:22.309Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="让Windows和Mac无缝共用一套键鼠和剪贴板的方法"><a href="#让Windows和Mac无缝共用一套键鼠和剪贴板的方法" class="headerlink" title="让Windows和Mac无缝共用一套键鼠和剪贴板的方法"></a>让Windows和Mac无缝共用一套键鼠和剪贴板的方法</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不知道大家又没有和我一样，同时拥有一台台式机Windows和Mac。每次我想同时操作两台电脑的时候，或者想把Mac当副屏幕的时候，我都需要单独操作两边的鼠标和键盘，感觉相当的麻烦。</p><p>虽然以前买了一个罗技的MX Master 3 可以满足需求，但是第一成本太高，还有一点就是你还得买个罗技的键盘，成本真的太高了，每次复制文件也是需要右键点击操作，非常的鸡肋。</p><p>有没有一个既免费，又方便好用的方案呢。</p><p>研究了半天，有了，而且非常流畅，体验下来也没什么延迟。直接感觉起飞(‘ω’)ノ</p><p>就是一个叫做<strong>ShareMouse</strong>的软件。听说Synergy也可以做到，但是需要付费直接PASS掉。</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="1-下载ShareMouse"><a href="#1-下载ShareMouse" class="headerlink" title="1.下载ShareMouse"></a>1.下载ShareMouse</h3><p><a href="https://www.sharemouse.com/download/">https://www.sharemouse.com/download/</a></p><p>这里分别在Windows和Mac上下载对应系统的软件</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921214804615.png" alt="image-20220921214804615"></p><h3 id="2-安装和设置"><a href="#2-安装和设置" class="headerlink" title="2.安装和设置"></a>2.安装和设置</h3><h4 id="2-1-Windows端设置"><a href="#2-1-Windows端设置" class="headerlink" title="2.1 Windows端设置"></a>2.1 Windows端设置</h4><p>分别在Windows和Mac上安装好了之后，Windows可以在右下角看到一个鼠标的图标</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921214957796.png" alt="image-20220921214957796"></p><p>然后右键它。</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921215155806.png" alt="image-20220921215155806"></p><p>选择Settings</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921215720935.png" alt="image-20220921215720935"></p><p>看到⬆图之后，选择Clients，这里我们配置一下Mac的IP地址</p><p>如果不知道是多少，可以在Mac相同的地方点击 Show local IP address进行查看</p><p>然后我们填入到②的位置。最后点击一下6555旁边的小电脑图标。</p><p>设置完成。</p><h3 id="2-2-Mac端设置"><a href="#2-2-Mac端设置" class="headerlink" title="2.2 Mac端设置"></a>2.2 Mac端设置</h3><p>![截屏2022-09-21 22.01.02](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.01.02.png)</p><p>还是一样上面任务栏我们可以看到一个鼠标的图标，点击它一下。</p><p>选择Settings</p><p>![截屏2022-09-21 22.02.55](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.02.55.png)</p><p>然后一样点击选择Clients</p><p>![截屏2022-09-21 22.04.40](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.04.40.png)</p><p>这里我们填写Windows的IP地址</p><p>记住，是Windows的IP`地址不是Mac的。</p><p>和Windows的设置一样填入IP地址之后。最后点击一下6555旁边的小电脑图标。</p><h4 id="2-3配置桌面位置"><a href="#2-3配置桌面位置" class="headerlink" title="2.3配置桌面位置"></a>2.3配置桌面位置</h4><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921221027583.png" alt="image-20220921221027583"></p><p>右键任务栏的鼠标图标</p><p>选择 Monitor Manager</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921221109897.png" alt="image-20220921221109897"></p><p>这里你可以配置对应的位置。</p><p>两台电脑一定要保持一致。</p><p><strong>好了，恭喜你完成了！撒花(‘ω’)ノ</strong></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实设置起来很简单，总结起来就是把各个端设置成对方的IP地址即可。</p><p>当然你还可以设置一个密码，在设置里的 Network里面 Security里打上勾然后输入密码。</p><p>两台电脑都要输入一样的密码设置。就可以了。</p><p>体验下来很流畅，拖动文件一步到位。很棒。嘿嘿嘿(;・∀・)</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;让Windows和Mac无缝共用一套键鼠和剪贴板的方法&quot;&gt;&lt;a href=&quot;#让Windows和Mac无缝共用一套键鼠和剪贴板的方法&quot; class=&quot;headerlink&quot; title=&quot;让Windows和Mac无缝共用一套键鼠和剪贴板的方法&quot;&gt;&lt;/a&gt;让Wind</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>如何通过docker-compose来安装WordPress</title>
@@ -65,6 +45,36 @@
     <category term="Ubuntu" scheme="http://example.com/tags/Ubuntu/"/>
     
     <category term="docker-compose" scheme="http://example.com/tags/docker-compose/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何通过docker-compose来安装WordPress</title>
+    <link href="http://example.com/2022/09/01/%E8%AE%A9Windows%E5%92%8CMac%E6%97%A0%E7%BC%9D%E5%85%B1%E7%94%A8%E4%B8%80%E5%A5%97%E9%94%AE%E9%BC%A0%E5%92%8C%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2022/09/01/%E8%AE%A9Windows%E5%92%8CMac%E6%97%A0%E7%BC%9D%E5%85%B1%E7%94%A8%E4%B8%80%E5%A5%97%E9%94%AE%E9%BC%A0%E5%92%8C%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E6%96%B9%E6%B3%95/</id>
+    <published>2022-09-01T09:46:56.000Z</published>
+    <updated>2022-09-26T18:23:27.227Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="让Windows和Mac无缝共用一套键鼠和剪贴板的方法"><a href="#让Windows和Mac无缝共用一套键鼠和剪贴板的方法" class="headerlink" title="让Windows和Mac无缝共用一套键鼠和剪贴板的方法"></a>让Windows和Mac无缝共用一套键鼠和剪贴板的方法</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不知道大家又没有和我一样，同时拥有一台台式机Windows和Mac。每次我想同时操作两台电脑的时候，或者想把Mac当副屏幕的时候，我都需要单独操作两边的鼠标和键盘，感觉相当的麻烦。</p><p>虽然以前买了一个罗技的MX Master 3 可以满足需求，但是第一成本太高，还有一点就是你还得买个罗技的键盘，成本真的太高了，每次复制文件也是需要右键点击操作，非常的鸡肋。</p><p>有没有一个既免费，又方便好用的方案呢。</p><p>研究了半天，有了，而且非常流畅，体验下来也没什么延迟。直接感觉起飞(‘ω’)ノ</p><p>就是一个叫做<strong>ShareMouse</strong>的软件。听说Synergy也可以做到，但是需要付费直接PASS掉。</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="1-下载ShareMouse"><a href="#1-下载ShareMouse" class="headerlink" title="1.下载ShareMouse"></a>1.下载ShareMouse</h3><p><a href="https://www.sharemouse.com/download/">https://www.sharemouse.com/download/</a></p><p>这里分别在Windows和Mac上下载对应系统的软件</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921214804615.png" alt="image-20220921214804615"></p><h3 id="2-安装和设置"><a href="#2-安装和设置" class="headerlink" title="2.安装和设置"></a>2.安装和设置</h3><h4 id="2-1-Windows端设置"><a href="#2-1-Windows端设置" class="headerlink" title="2.1 Windows端设置"></a>2.1 Windows端设置</h4><p>分别在Windows和Mac上安装好了之后，Windows可以在右下角看到一个鼠标的图标</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921214957796.png" alt="image-20220921214957796"></p><p>然后右键它。</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921215155806.png" alt="image-20220921215155806"></p><p>选择Settings</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921215720935.png" alt="image-20220921215720935"></p><p>看到⬆图之后，选择Clients，这里我们配置一下Mac的IP地址</p><p>如果不知道是多少，可以在Mac相同的地方点击 Show local IP address进行查看</p><p>然后我们填入到②的位置。最后点击一下6555旁边的小电脑图标。</p><p>设置完成。</p><h3 id="2-2-Mac端设置"><a href="#2-2-Mac端设置" class="headerlink" title="2.2 Mac端设置"></a>2.2 Mac端设置</h3><p>![截屏2022-09-21 22.01.02](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.01.02.png)</p><p>还是一样上面任务栏我们可以看到一个鼠标的图标，点击它一下。</p><p>选择Settings</p><p>![截屏2022-09-21 22.02.55](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.02.55.png)</p><p>然后一样点击选择Clients</p><p>![截屏2022-09-21 22.04.40](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.04.40.png)</p><p>这里我们填写Windows的IP地址</p><p>记住，是Windows的IP`地址不是Mac的。</p><p>和Windows的设置一样填入IP地址之后。最后点击一下6555旁边的小电脑图标。</p><h4 id="2-3配置桌面位置"><a href="#2-3配置桌面位置" class="headerlink" title="2.3配置桌面位置"></a>2.3配置桌面位置</h4><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921221027583.png" alt="image-20220921221027583"></p><p>右键任务栏的鼠标图标</p><p>选择 Monitor Manager</p><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921221109897.png" alt="image-20220921221109897"></p><p>这里你可以配置对应的位置。</p><p>两台电脑一定要保持一致。</p><p><strong>好了，恭喜你完成了！撒花(‘ω’)ノ</strong></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实设置起来很简单，总结起来就是把各个端设置成对方的IP地址即可。</p><p>当然你还可以设置一个密码，在设置里的 Network里面 Security里打上勾然后输入密码。</p><p>两台电脑都要输入一样的密码设置。就可以了。</p><p>体验下来很流畅，拖动文件一步到位。很棒。嘿嘿嘿(;・∀・)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;让Windows和Mac无缝共用一套键鼠和剪贴板的方法&quot;&gt;&lt;a href=&quot;#让Windows和Mac无缝共用一套键鼠和剪贴板的方法&quot; class=&quot;headerlink&quot; title=&quot;让Windows和Mac无缝共用一套键鼠和剪贴板的方法&quot;&gt;&lt;/a&gt;让Wind</summary>
+      
+    
+    
+    
+    <category term="教程" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="好用的软件" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="Windows" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/Windows/"/>
+    
+    
+    <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="Mac" scheme="http://example.com/tags/Mac/"/>
     
   </entry>
   
