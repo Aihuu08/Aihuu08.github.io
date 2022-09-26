@@ -1458,30 +1458,30 @@ volumes:
 <p>就是一个叫做<strong>ShareMouse</strong>的软件。听说Synergy也可以做到，但是需要付费直接PASS掉。</p>
 <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="1-下载ShareMouse"><a href="#1-下载ShareMouse" class="headerlink" title="1.下载ShareMouse"></a>1.下载ShareMouse</h3><p><a href="https://www.sharemouse.com/download/">https://www.sharemouse.com/download/</a></p>
 <p>这里分别在Windows和Mac上下载对应系统的软件</p>
-<p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921214804615.png" alt="image-20220921214804615"></p>
+<p><img src="https://tutujanjan.com/wp-content/uploads/2022/09/image-20220921214804615.png" alt="img"></p>
 <h3 id="2-安装和设置"><a href="#2-安装和设置" class="headerlink" title="2.安装和设置"></a>2.安装和设置</h3><h4 id="2-1-Windows端设置"><a href="#2-1-Windows端设置" class="headerlink" title="2.1 Windows端设置"></a>2.1 Windows端设置</h4><p>分别在Windows和Mac上安装好了之后，Windows可以在右下角看到一个鼠标的图标</p>
-<p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921214957796.png" alt="image-20220921214957796"></p>
+<p><img src="https://tutujanjan.com/wp-content/uploads/2022/09/image-20220921214957796.png" alt="img"></p>
 <p>然后右键它。</p>
-<p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921215155806.png" alt="image-20220921215155806"></p>
+<p><img src="https://tutujanjan.com/wp-content/uploads/2022/09/image-20220921215155806.png" alt="img"></p>
 <p>选择Settings</p>
-<p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921215720935.png" alt="image-20220921215720935"></p>
-<p>看到⬆图之后，选择Clients，这里我们配置一下Mac的IP地址</p>
+<p><img src="https://tutujanjan.com/wp-content/uploads/2022/09/image-20220921215720935.png" alt="img"></p>
+<p>看到<img src="https://s.w.org/images/core/emoji/14.0.0/svg/2b06.svg" alt="⬆">图之后，选择Clients，这里我们配置一下Mac的IP地址</p>
 <p>如果不知道是多少，可以在Mac相同的地方点击 Show local IP address进行查看</p>
 <p>然后我们填入到②的位置。最后点击一下6555旁边的小电脑图标。</p>
 <p>设置完成。</p>
-<h3 id="2-2-Mac端设置"><a href="#2-2-Mac端设置" class="headerlink" title="2.2 Mac端设置"></a>2.2 Mac端设置</h3><p>![截屏2022-09-21 22.01.02](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.01.02.png)</p>
+<h3 id="2-2-Mac端设置"><a href="#2-2-Mac端设置" class="headerlink" title="2.2 Mac端设置"></a>2.2 Mac端设置</h3><p><img src="https://tutujanjan.com/wp-content/uploads/2022/09/%E6%88%AA%E5%B1%8F2022-09-21-22.01.02.png" alt="img"></p>
 <p>还是一样上面任务栏我们可以看到一个鼠标的图标，点击它一下。</p>
 <p>选择Settings</p>
-<p>![截屏2022-09-21 22.02.55](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.02.55.png)</p>
+<p><img src="https://tutujanjan.com/wp-content/uploads/2022/09/%E6%88%AA%E5%B1%8F2022-09-21-22.02.55-1024x945.png" alt="img"></p>
 <p>然后一样点击选择Clients</p>
-<p>![截屏2022-09-21 22.04.40](C:\Users\oybdy\AppData\Local\Temp\截屏2022-09-21 22.04.40.png)</p>
+<p><img src="https://tutujanjan.com/wp-content/uploads/2022/09/%E6%88%AA%E5%B1%8F2022-09-21-22.04.40.png" alt="img"></p>
 <p>这里我们填写Windows的IP地址</p>
 <p>记住，是Windows的IP`地址不是Mac的。</p>
 <p>和Windows的设置一样填入IP地址之后。最后点击一下6555旁边的小电脑图标。</p>
-<h4 id="2-3配置桌面位置"><a href="#2-3配置桌面位置" class="headerlink" title="2.3配置桌面位置"></a>2.3配置桌面位置</h4><p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921221027583.png" alt="image-20220921221027583"></p>
+<h4 id="2-3配置桌面位置"><a href="#2-3配置桌面位置" class="headerlink" title="2.3配置桌面位置"></a>2.3配置桌面位置</h4><p><img src="https://tutujanjan.com/wp-content/uploads/2022/09/image-20220921221027583-1.png" alt="img"></p>
 <p>右键任务栏的鼠标图标</p>
 <p>选择 Monitor Manager</p>
-<p><img src="C:\Users\oybdy\AppData\Roaming\Typora\typora-user-images\image-20220921221109897.png" alt="image-20220921221109897"></p>
+<p><img src="https://tutujanjan.com/wp-content/uploads/2022/09/image-20220921221109897-1-1024x362.png" alt="img"></p>
 <p>这里你可以配置对应的位置。</p>
 <p>两台电脑一定要保持一致。</p>
 <p><strong>好了，恭喜你完成了！撒花(‘ω’)ノ</strong></p>
@@ -1658,6 +1658,42 @@ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
       <tags>
         <tag>Hexo</tag>
         <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用rclone把OneDrive、GoogleDrive等网盘挂载到window本地</title>
+    <url>/2022/09/27/%E5%88%A9%E7%94%A8rclone%E6%8A%8AOneDrive%E3%80%81GoogleDrive%E7%AD%89%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%B0window%E6%9C%AC%E5%9C%B0/</url>
+    <content><![CDATA[<h1 id="利用rclone把OneDrive、GoogleDrive等网盘挂载到window本地"><a href="#利用rclone把OneDrive、GoogleDrive等网盘挂载到window本地" class="headerlink" title="利用rclone把OneDrive、GoogleDrive等网盘挂载到window本地"></a>利用rclone把OneDrive、GoogleDrive等网盘挂载到window本地</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>大学4年，都最后一年才发现学校的邮箱可以白嫖1T的Onedrive网盘。而且毕业了说不定还能继续白嫖。但是每次打开网盘都需要在网页上操作，下载软件很麻烦不说，而且还可能乱备份文件，找了一些教程，可以把我们的Onedrive直接挂载到本地磁盘。</p>
+<p>成功后你就可以看到这种。</p>
+<p><img src="F:\blog\source\images\20220927\1.png" alt="1"></p>
+<p>直接免费增加1T 不多说，既然可以白嫖，不仅要白嫖到还要白嫖到爽才行。</p>
+<p>介绍一下怎么挂载吧。</p>
+<h2 id="一、环境安装"><a href="#一、环境安装" class="headerlink" title="一、环境安装"></a>一、环境安装</h2><h2 id="1、rclone下载"><a href="#1、rclone下载" class="headerlink" title="1、rclone下载"></a>1、rclone下载</h2><p><a href="https://rclone.org/downloads/">官网下载：https://rclone.org/downloads/</a><br><img src="F:\blog\source\images\20220927\01.PNG" alt="01"></p>
+<p>或者</p>
+<p><a href="https://github.com/rclone/rclone/releases">Github下载：https://github.com/rclone/rclone/releases</a></p>
+<p><strong>下载后解压</strong></p>
+<p>我这里直接解压到我的桌面</p>
+<p><img src="Q:\博客图片素材\03.JPG" alt="03"></p>
+<h2 id="2、安装winfsp"><a href="#2、安装winfsp" class="headerlink" title="2、安装winfsp"></a>2、安装winfsp</h2><p><a href="http://www.secfs.net/winfsp/rel/">官网下载：http://www.secfs.net/winfsp/rel/</a></p>
+<p><img src="Q:\博客图片素材\04.PNG" alt="04"></p>
+<p>或者</p>
+<p><a href="https://github.com/billziss-gh/winfsp/releases">Github下载：https://github.com/billziss-gh/winfsp/releases</a></p>
+<p><strong>下载完成后安装</strong></p>
+<p><img src="Q:\博客图片素材\1623763563848.png" alt="1623763563848"></p>
+<p><img src="Q:\博客图片素材\02.png" alt="02"></p>
+<p><img src="Q:\博客图片素材\03.png" alt="03"></p>
+<h2 id="3、安装Git"><a href="#3、安装Git" class="headerlink" title="3、安装Git"></a>3、安装Git</h2><p>官网地址：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<p>下载后安装</p>
+<p>一直下一步就行。</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>好用的软件</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>OneDrive</tag>
+        <tag>网盘</tag>
       </tags>
   </entry>
 </search>
