@@ -1,0 +1,1405 @@
+<!DOCTYPE HTML>
+<html lang="jp">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Android Python">
+    <meta name="description" content="Linux环境下安装rclone配置google drive上传教程1. 前言我们在云服务器上，很多情况下会发现配置的硬盘根本就不够，想增加容量但是又需要加钱，有没有什么好一点的方案来增加我们的服务器容量，来为我们离线下载提供足够的空间。
+">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>Tutu</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Tutu" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/favicon-32x32.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Tutu</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>ホーム</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>タグ</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分類</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>アーカイブ</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>自己紹介</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="検索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/favicon-32x32.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Tutu</div>
+        <div class="logo-desc">
+            
+            Tutu的博客
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			ホーム
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			タグ
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分類
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			アーカイブ
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			自己紹介
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">タグ無</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>初回発表日:&nbsp;&nbsp;
+                    2022-10-19
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章文字数:&nbsp;&nbsp;
+                    2.1k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Linux环境下安装rclone配置google-drive上传教程"><a href="#Linux环境下安装rclone配置google-drive上传教程" class="headerlink" title="Linux环境下安装rclone配置google drive上传教程"></a>Linux环境下安装rclone配置google drive上传教程</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>我们在云服务器上，很多情况下会发现配置的硬盘根本就不够，想增加容量但是又需要加钱，有没有什么好一点的方案来增加我们的服务器容量，来为我们离线下载提供足够的空间。</p>
+<p>如果我们可以后面再通过自动脚本，实现qB下载的文件自动上传，效果更好。</p>
+<p>这一次我们先介绍如何在Linux上配置好rclone然后进行简单的上传。</p>
+<h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h2><h3 id="2-1-配置前的一些说明"><a href="#2-1-配置前的一些说明" class="headerlink" title="2-1. 配置前的一些说明"></a>2-1. 配置前的一些说明</h3><p>rclone v1.59.1</p>
+<p>之前配置 gd 的方法是会返回一个网页链接进行授权，只需要本地浏览器打开后，登陆，复制获取到的代码粘贴回车就行。</p>
+<p>随着 rclone 更新到 v1.57 后，新版本提示：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Option config_token.
+For this to work, you will need rclone available on a machine that has
+a web browser available.
+For <span class="token function">more</span> <span class="token builtin class-name">help</span> and alternate methods see: https://rclone.org/remote_setup/
+Execute the following on the machine with the web browser <span class="token punctuation">(</span>same rclone
+version recommended<span class="token punctuation">)</span>:
+        rclone authorize <span class="token string">"drive"</span> <span class="token string">"eyJzY29wZSI6ImRyaXZlIn0"</span>
+Then <span class="token function">paste</span> the result.
+Enter a value.
+config_token<span class="token operator">&gt;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>没有授权链接了，会提示没有浏览器。</p>
+<p>所以只能本地 windows 上弄好了，再把配置文件rclone.conf传到 服务器 上了。</p>
+<h3 id="2-2-创建rclone-conf配置文件"><a href="#2-2-创建rclone-conf配置文件" class="headerlink" title="2-2. 创建rclone.conf配置文件"></a>2-2. 创建rclone.conf配置文件</h3><p>我们先来到Windows上面来创建rclone.conf配置文件。</p>
+<p><strong>google drive盘有区分个人盘和团队盘</strong></p>
+<p>演示个人盘配置，团队盘也大同小异。</p>
+<h4 id="2-2-1-rclone下载"><a href="#2-2-1-rclone下载" class="headerlink" title="2-2-1. rclone下载"></a>2-2-1. rclone下载</h4><p><a target="_blank" rel="noopener" href="https://rclone.org/downloads/">官网下载：https://rclone.org/downloads/</a></p>
+<p><img src="http://158.101.152.174/wp-content/uploads/2022/09/01-1024x309.png" alt="img"></p>
+<p>或者你可以在GitHub下载</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rclone/rclone/releases">Github下载：https://github.com/rclone/rclone/releases</a></p>
+<p><strong>下载后解压</strong></p>
+<p>我这里直接解压到我的桌面</p>
+<p><img src="http://158.101.152.174/wp-content/uploads/2022/09/03.jpg" alt="img"></p>
+<h4 id="2-2-2-为rclone配置环境变量"><a href="#2-2-2-为rclone配置环境变量" class="headerlink" title="2-2-2. 为rclone配置环境变量"></a>2-2-2. 为rclone配置环境变量</h4><ol>
+<li>点开电脑的查找输入查看高级系统设置</li>
+<li>选择环境变量</li>
+<li>找到刚刚解压的Rclone的路径添加进Path变量</li>
+<li>检查rclone是否配置成功，然后按打开，当然也可以打开，输入，如果出现下面的输出则安装成功，否则检查整个步骤的环境是否配置正确。<code>rclone --version</code></li>
+</ol>
+<p><img src="http://158.101.152.174/wp-content/uploads/2022/09/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2022-09-27-224342-1.jpg" alt="img"></p>
+<p><img src="http://158.101.152.174/wp-content/uploads/2022/09/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2022-09-27-224819.jpg" alt="img"></p>
+<p><img src="http://158.101.152.174/wp-content/uploads/2022/09/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2022-09-27-225012.jpg" alt="img"></p>
+<p><img src="http://158.101.152.174/wp-content/uploads/2022/09/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-2022-09-27-225253.jpg" alt="img"></p>
+<h4 id="2-2-3-正式配置"><a href="#2-2-3-正式配置" class="headerlink" title="2-2-3. 正式配置"></a>2-2-3. 正式配置</h4><p>来到命令提示符</p>
+<p>C:\Users\Administrator&gt;rclone config</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">No remotes found - <span class="token function">make</span> a new one
+n<span class="token punctuation">)</span> New remote
+s<span class="token punctuation">)</span> Set configuration password
+q<span class="token punctuation">)</span> Quit config
+n/s/q<span class="token operator">&gt;</span> n *//第一步：新建配置*
+name<span class="token operator">&gt;</span> tutugd
+Type of storage to configure.
+Enter a string value. Press Enter <span class="token keyword">for</span> the default <span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>.
+Choose a number from below, or <span class="token builtin class-name">type</span> <span class="token keyword">in</span> your own value
+ <span class="token number">1</span> / 1Fichier
+   <span class="token punctuation">\</span> <span class="token string">"fichier"</span>
+ <span class="token number">2</span> / Alias <span class="token keyword">for</span> an existing remote
+   <span class="token punctuation">\</span> <span class="token string">"alias"</span>
+ <span class="token number">3</span> / Amazon Drive
+   <span class="token punctuation">\</span> <span class="token string">"amazon cloud drive"</span>
+ <span class="token number">4</span> / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, and Tencent COS
+   <span class="token punctuation">\</span> <span class="token string">"s3"</span>
+ <span class="token number">5</span> / Backblaze B2
+   <span class="token punctuation">\</span> <span class="token string">"b2"</span>
+ <span class="token number">6</span> / Box
+   <span class="token punctuation">\</span> <span class="token string">"box"</span>
+ <span class="token number">7</span> / Cache a remote
+   <span class="token punctuation">\</span> <span class="token string">"cache"</span>
+ <span class="token number">8</span> / Citrix Sharefile
+   <span class="token punctuation">\</span> <span class="token string">"sharefile"</span>
+ <span class="token number">9</span> / Compress a remote
+   <span class="token punctuation">\</span> <span class="token string">"compress"</span>
+<span class="token number">10</span> / Dropbox
+   <span class="token punctuation">\</span> <span class="token string">"dropbox"</span>
+<span class="token number">11</span> / Encrypt/Decrypt a remote
+   <span class="token punctuation">\</span> <span class="token string">"crypt"</span>
+<span class="token number">12</span> / Enterprise File Fabric
+   <span class="token punctuation">\</span> <span class="token string">"filefabric"</span>
+<span class="token number">13</span> / FTP Connection
+   <span class="token punctuation">\</span> <span class="token string">"ftp"</span>
+<span class="token number">14</span> / Google Cloud Storage <span class="token punctuation">(</span>this is not Google Drive<span class="token punctuation">)</span>
+   <span class="token punctuation">\</span> <span class="token string">"google cloud storage"</span>
+<span class="token number">15</span> / Google Drive
+   <span class="token punctuation">\</span> <span class="token string">"drive"</span>
+<span class="token number">16</span> / Google Photos
+   <span class="token punctuation">\</span> <span class="token string">"google photos"</span>
+<span class="token number">17</span> / Hadoop distributed <span class="token function">file</span> system
+   <span class="token punctuation">\</span> <span class="token string">"hdfs"</span>
+<span class="token number">18</span> / Hubic
+   <span class="token punctuation">\</span> <span class="token string">"hubic"</span>
+<span class="token number">19</span> / In memory object storage system.
+   <span class="token punctuation">\</span> <span class="token string">"memory"</span>
+<span class="token number">20</span> / Jottacloud
+   <span class="token punctuation">\</span> <span class="token string">"jottacloud"</span>
+<span class="token number">21</span> / Koofr
+   <span class="token punctuation">\</span> <span class="token string">"koofr"</span>
+<span class="token number">22</span> / Local Disk
+   <span class="token punctuation">\</span> <span class="token string">"local"</span>
+<span class="token number">23</span> / Mail.ru Cloud
+   <span class="token punctuation">\</span> <span class="token string">"mailru"</span>
+<span class="token number">24</span> / Mega
+   <span class="token punctuation">\</span> <span class="token string">"mega"</span>
+<span class="token number">25</span> / Microsoft Azure Blob Storage
+   <span class="token punctuation">\</span> <span class="token string">"azureblob"</span>
+<span class="token number">26</span> / Microsoft OneDrive
+   <span class="token punctuation">\</span> <span class="token string">"onedrive"</span>
+<span class="token number">27</span> / OpenDrive
+   <span class="token punctuation">\</span> <span class="token string">"opendrive"</span>
+<span class="token number">28</span> / OpenStack Swift <span class="token punctuation">(</span>Rackspace Cloud Files, Memset Memstore, OVH<span class="token punctuation">)</span>
+   <span class="token punctuation">\</span> <span class="token string">"swift"</span>
+<span class="token number">29</span> / Pcloud
+   <span class="token punctuation">\</span> <span class="token string">"pcloud"</span>
+<span class="token number">30</span> / Put.io
+   <span class="token punctuation">\</span> <span class="token string">"putio"</span>
+<span class="token number">31</span> / QingCloud Object Storage
+   <span class="token punctuation">\</span> <span class="token string">"qingstor"</span>
+<span class="token number">32</span> / SSH/SFTP Connection
+   <span class="token punctuation">\</span> <span class="token string">"sftp"</span>
+<span class="token number">33</span> / Sugarsync
+   <span class="token punctuation">\</span> <span class="token string">"sugarsync"</span>
+<span class="token number">34</span> / Tardigrade Decentralized Cloud Storage
+   <span class="token punctuation">\</span> <span class="token string">"tardigrade"</span>
+<span class="token number">35</span> / Transparently chunk/split large files
+   <span class="token punctuation">\</span> <span class="token string">"chunker"</span>
+<span class="token number">36</span> / Union merges the contents of several upstream fs
+   <span class="token punctuation">\</span> <span class="token string">"union"</span>
+<span class="token number">37</span> / Webdav
+   <span class="token punctuation">\</span> <span class="token string">"webdav"</span>
+<span class="token number">38</span> / Yandex Disk
+   <span class="token punctuation">\</span> <span class="token string">"yandex"</span>
+<span class="token number">39</span> / Zoho
+   <span class="token punctuation">\</span> <span class="token string">"zoho"</span>
+<span class="token number">40</span> / http Connection
+   <span class="token punctuation">\</span> <span class="token string">"http"</span>
+<span class="token number">41</span> / premiumize.me
+   <span class="token punctuation">\</span> <span class="token string">"premiumizeme"</span>
+<span class="token number">42</span> / seafile
+   <span class="token punctuation">\</span> <span class="token string">"seafile"</span>
+Storage<span class="token operator">&gt;</span> <span class="token number">15</span> *//找到 Google Drive 这里可以看到是 <span class="token number">18</span> 号 第二步：选择15 Google Drive*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Option client_id.
+Google Application Client Id
+Setting your own is recommended.
+See https://rclone.org/drive/<span class="token comment">#making-your-own-client-id for how to create your own.</span>
+If you leave this blank, it will use an internal key <span class="token function">which</span> is low performance.
+Enter a value. Press Enter to leave empty.
+client_id<span class="token operator">&gt;</span> 
+
+<span class="token comment"># 留空就行</span>
+
+Option client_secret.
+OAuth Client Secret.
+Leave blank normally.
+Enter a value. Press Enter to leave empty.
+client_secret<span class="token operator">&gt;</span> 
+
+<span class="token comment"># 留空就行</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>当然这里你也可以自己配置 GoogleDriveAPI。</p>
+<p>Google API 控制台地址<br><code>https://console.developers.google.com/</code></p>
+<p>我们还是直接留空默认得了。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Option scope.
+Scope that rclone should use when requesting access from drive.
+Choose a number from below, or <span class="token builtin class-name">type</span> <span class="token keyword">in</span> your own value.
+Press Enter to leave empty.
+ <span class="token number">1</span> / Full access all files, excluding Application Data Folder.
+   <span class="token punctuation">\</span> <span class="token punctuation">(</span>drive<span class="token punctuation">)</span>
+ <span class="token number">2</span> / Read-only access to <span class="token function">file</span> metadata and <span class="token function">file</span> contents.
+   <span class="token punctuation">\</span> <span class="token punctuation">(</span>drive.readonly<span class="token punctuation">)</span>
+   / Access to files created by rclone only.
+ <span class="token number">3</span> <span class="token operator">|</span> These are visible <span class="token keyword">in</span> the drive website.
+   <span class="token operator">|</span> File authorization is revoked when the user deauthorizes the app.
+   <span class="token punctuation">\</span> <span class="token punctuation">(</span>drive.file<span class="token punctuation">)</span>
+   / Allows <span class="token builtin class-name">read</span> and <span class="token function">write</span> access to the Application Data folder.
+ <span class="token number">4</span> <span class="token operator">|</span> This is not visible <span class="token keyword">in</span> the drive website.
+   <span class="token punctuation">\</span> <span class="token punctuation">(</span>drive.appfolder<span class="token punctuation">)</span>
+   / Allows read-only access to <span class="token function">file</span> metadata but
+ <span class="token number">5</span> <span class="token operator">|</span> does not allow any access to <span class="token builtin class-name">read</span> or download <span class="token function">file</span> content.
+   <span class="token punctuation">\</span> <span class="token punctuation">(</span>drive.metadata.readonly<span class="token punctuation">)</span>
+scope<span class="token operator">&gt;</span> <span class="token number">1</span>
+
+<span class="token comment"># 输入 1 完全读写权限</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>回车</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Option service_account_file.
+Service Account Credentials JSON <span class="token function">file</span> path.
+Leave blank normally.
+Needed only <span class="token keyword">if</span> you want use SA instead of interactive login.
+Leading <span class="token variable"><span class="token variable">`</span>~<span class="token variable">`</span></span> will be expanded <span class="token keyword">in</span> the <span class="token function">file</span> name as will environment variables such as <span class="token variable"><span class="token variable">`</span>$<span class="token punctuation">{</span>RCLONE_CONFIG_DIR<span class="token punctuation">}</span><span class="token variable">`</span></span><span class="token builtin class-name">.</span>
+Enter a value. Press Enter to leave empty.
+service_account_file<span class="token operator">&gt;</span> 
+
+<span class="token comment"># 留空就行</span>
+
+Edit advanced config?
+y<span class="token punctuation">)</span> Yes
+n<span class="token punctuation">)</span> No <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+y/n<span class="token operator">&gt;</span> 
+
+<span class="token comment"># 输入 n</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>回车</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Use auto config?
+ * Say Y <span class="token keyword">if</span> not sure
+ * Say N <span class="token keyword">if</span> you are working on a remote or headless machine
+
+y<span class="token punctuation">)</span> Yes <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+n<span class="token punctuation">)</span> No
+y/n<span class="token operator">&gt;</span> 
+
+<span class="token comment"># 输入 n</span>
+<span class="token comment"># 提示：</span>
+
+Option config_token.
+For this to work, you will need rclone available on a machine that has
+a web browser available.
+For <span class="token function">more</span> <span class="token builtin class-name">help</span> and alternate methods see: https://rclone.org/remote_setup/
+Execute the following on the machine with the web browser <span class="token punctuation">(</span>same rclone
+version recommended<span class="token punctuation">)</span>:
+        rclone authorize <span class="token string">"drive"</span> <span class="token string">"eyJzY29wZSI6ImRyaXZlIn0"</span>
+Then <span class="token function">paste</span> the result.
+Enter a value.
+config_token<span class="token operator">&gt;</span> 等待输入
+
+<span class="token comment"># 回到本地 windows 上</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里我们回到windows上用管理员权限再打开一个命令提示符</p>
+<pre class="line-numbers language-none"><code class="language-none">cd 我们解压rclone的目录
+rclone authorize "drive"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>会自动打开浏览器让你登录你的<strong>google</strong>账户</p>
+<p>这里我们在浏览器授权里进行一下授权操作。</p>
+<p>点击允许后，浏览器出现<code>Success!</code>提示证明成功了。</p>
+<p>出现大一串字符。</p>
+<p>复制 access_token 注意：连同大括号一同复制，从大括号开始到大括号结束。</p>
+<p>然后把复制的 code 粘贴到 SSH 终端上回车。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Configure this as a Shared Drive <span class="token punctuation">(</span>Team Drive<span class="token punctuation">)</span>?
+
+y<span class="token punctuation">)</span> Yes
+n<span class="token punctuation">)</span> No <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+y/n<span class="token operator">&gt;</span> 
+
+<span class="token comment">#输入 n 默认回车就是 n 了</span>
+
+Configuration complete.
+Options:
+- type: drive
+- scope: drive
+- token: <span class="token punctuation">{</span><span class="token string">"access_token"</span><span class="token builtin class-name">:</span><span class="token string">"ya2PJrRmKORRz9dTlkq-on8XQQE65dr8CQEx-3PjmyPoFw6VxZxYYw0163"</span>,<span class="token string">"token_type"</span><span class="token builtin class-name">:</span><span class="token string">"Bearer"</span>,<span class="token string">"refresh_token"</span><span class="token builtin class-name">:</span><span class="token string">"1//0e7xWWDX2tRgPCgYIARAAGA4SNwF-L9Irvw-ZnCue7vgz6kb6jYstKGyZsBliCvNGbj9tWd1mZGEoegiCYxoPIU0z9j6nmFck41c"</span>,<span class="token string">"expiry"</span><span class="token builtin class-name">:</span><span class="token string">"2022-09-08T22:42:59.5596286+08:00"</span><span class="token punctuation">}</span>
+- team_drive: 
+Keep this <span class="token string">"1"</span> remote?
+y<span class="token punctuation">)</span> Yes this is OK <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+e<span class="token punctuation">)</span> Edit this remote
+d<span class="token punctuation">)</span> Delete this remote
+y/e/d<span class="token operator">&gt;</span> 
+
+<span class="token comment"># 输入 y 完成。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>团队盘/共享盘</strong></p>
+<p>跟个人盘差不多，只不过进行到最后有一些差异</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">2022</span>/09/13 <span class="token number">14</span>:38:20 NOTICE: If your browser doesn't <span class="token function">open</span> automatically go to the following link: http://127.0.0.1:53682/auth?state<span class="token operator">=</span>XK4Khs8g
+<span class="token number">2022</span>/09/13 <span class="token number">14</span>:38:20 NOTICE: Log <span class="token keyword">in</span> and authorize rclone <span class="token keyword">for</span> access
+<span class="token number">2022</span>/09/13 <span class="token number">14</span>:38:20 NOTICE: Waiting <span class="token keyword">for</span> code<span class="token punctuation">..</span>.
+<span class="token number">2022</span>/09/13 <span class="token number">14</span>:38:25 NOTICE: Got code
+Configure this as a Shared Drive <span class="token punctuation">(</span>Team Drive<span class="token punctuation">)</span>?
+
+y<span class="token punctuation">)</span> Yes
+n<span class="token punctuation">)</span> No <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+y/n<span class="token operator">&gt;</span> y
+
+<span class="token comment"># 这里会提示，Configure this as a Shared Drive (Team Drive)? 将此配置为共享驱动器（团队驱动器）？默认回车是 N ，如果是团队盘/共享盘的话，要选 y 。</span>
+
+Option config_team_drive.
+Shared Drive
+Choose a number from below, or <span class="token builtin class-name">type</span> <span class="token keyword">in</span> your own string value.
+Press Enter <span class="token keyword">for</span> the default <span class="token punctuation">(</span>0AGt8URxxxxPVA<span class="token punctuation">)</span>.
+ <span class="token number">1</span> / Patricia
+   <span class="token punctuation">\</span> <span class="token punctuation">(</span>0AGtXXXXX9PVA<span class="token punctuation">)</span>
+config_team_drive<span class="token operator">&gt;</span> 
+
+<span class="token comment"># 然后就会检测你的账户下有几个团队盘/共享盘，这串代码的意识就是：https://drive.google.com/drive/u/2/folders/0AGtXXXXX9PVA</span>
+<span class="token comment"># 点开你的团队盘/共享盘，网址栏最后那一串代码。</span>
+<span class="token comment"># 然后一路回车就行了。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="2-2-4-服务器下载安装rclone"><a href="#2-2-4-服务器下载安装rclone" class="headerlink" title="2-2-4. 服务器下载安装rclone"></a>2-2-4. 服务器下载安装rclone</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt-get</span> update
+<span class="token function">curl</span> https://rclone.org/install.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="2-2-5-配置到服务器"><a href="#2-2-5-配置到服务器" class="headerlink" title="2-2-5. 配置到服务器"></a>2-2-5. 配置到服务器</h4><p>我们在windows的C:\Users\xxx\AppData\Roaming\rclone下找到创建好的rclone.conf</p>
+<p>然后上传到我们的服务器的/root/.config/rclone目录下</p>
+<p>然后就大功告成了。</p>
+<h2 id="3-测试上传命令"><a href="#3-测试上传命令" class="headerlink" title="3.测试上传命令"></a>3.测试上传命令</h2><p>上传之前别忘装一个 screen</p>
+<p>一般情况上传的时候，我们把终端一关闭，程序运行就停止了，但有时候上传的文件比较多，总不能一直开着终端，所以 screen 的做用就是让你关闭终端后依旧保持上传。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token function">screen</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>测试一下上传。我把服务器本地的**/root/download/<strong>目录里面的文件复制到谷歌云的</strong>upload**目录里。</p>
+<p>开启4线程，并显示上传详情</p>
+<p>命令就是：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">screen</span> rclone copy /root/download/ gd-ceshi:/upload <span class="token parameter variable">--transfers</span> <span class="token number">4</span> <span class="token parameter variable">-P</span>
+
+<span class="token comment"># 你说你不想复制？想上传完就删除本地的文件？</span>
+<span class="token comment">## 那就把 copy 这个参数 改成 move</span>
+rclone move /root/googledrive/ tutugd:/dianyin <span class="token parameter variable">--transfers</span> <span class="token number">4</span> <span class="token parameter variable">-P</span>
+<span class="token comment"># 你说你的服务器cpu性能强劲？网速也快？4线程太慢了，想要12线程？</span>
+<span class="token comment">## 那就把--transfers 4 这个 4 改成 12</span>
+
+<span class="token comment"># 你说你想反过来？把云盘的文件下载到服务器本地？</span>
+<span class="token comment">## 那就倒过来：screen rclone copy gd-ceshi:/upload /root/download/ --transfers 4 -P</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.ectrv.com/?p=917">https://www.ectrv.com/?p=917</a></p>
+<p><a target="_blank" rel="noopener" href="https://hechuan.me/rclone-google-drive">https://hechuan.me/rclone-google-drive</a></p>
+<p><a target="_blank" rel="noopener" href="https://hechuan.me/rclone">https://hechuan.me/rclone</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        WriteBy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Tutu</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章リンク:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2022/10/19/Linux%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85rclone%E9%85%8D%E7%BD%AEgoogle%20drive%E4%B8%8A%E4%BC%A0%E6%95%99%E7%A8%8B/">http://example.com/2022/10/19/Linux%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85rclone%E9%85%8D%E7%BD%AEgoogle%20drive%E4%B8%8A%E4%BC%A0%E6%95%99%E7%A8%8B/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        CopyRight宣言:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本サイトに掲載された内容は下記に従う
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    著作権。
+                    <a href="/about" target="_blank">Tutu</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>コピー成功</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">査読</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">タグ無</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;前へ</div>
+            <div class="card">
+                <a href="/2022/10/19/%E4%BD%BF%E7%94%A8Protainer(docker-compose)%E6%9D%A5%E6%90%AD%E5%BB%BAqbittorrent%E6%9D%A5%E8%BF%9B%E8%A1%8C%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Tutu
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                次へ&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/10/18/%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E6%90%AD%E5%BB%BAKMS%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9D%A5%E6%BF%80%E6%B4%BBWindows%E5%92%8Coffice/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Tutu
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目次</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">Tutu</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;アクセス回数:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;アクセス人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "5";
+                        var startDate = "20";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'jp';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Aihuu08" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:tibaaihuu@yahoo.co.jp" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=775712438" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 775712438" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;検索</span>
+            <input type="search" id="searchInput" name="s" placeholder="キーワードを入力してください。"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":400,"hOffset":50,"vOffset":10},"mobile":{"show":false}});</script></body>
+
+</html>
